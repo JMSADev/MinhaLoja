@@ -87,15 +87,29 @@
     <!-- Painel administrativo -->
     <section class="administracao" id="administracao">
       <h2>Área administrativa</h2>
-
+    
       <p>Gerencie os cadastros e acompanhe o funcionamento da loja.</p>
-
+    
       <div class="links-administracao">
         <a href="#clientes">Clientes</a>
         <a href="#produtos">Produtos</a>
         <a href="#servicos">Serviços</a>
         <a href="#estoque">Estoque</a>
         <a href="#pedidos">Pedidos</a>
+      </div>
+    
+      <div class="teste-backend">
+        <h3>Funcionários cadastrados</h3>
+    
+        <p>{{ mensagem }}</p>
+    
+        <div *ngFor="let funcionario of funcionarios">
+          <p>
+            <strong>Nome:</strong>
+            {{ funcionario.idpessoaNavigation?.nome || funcionario.nome || 'Nome não informado' }}
+          </p>
+          <hr>
+        </div>
       </div>
     </section>
 
